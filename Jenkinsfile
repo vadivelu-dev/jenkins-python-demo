@@ -26,6 +26,11 @@ pipeline {
                 echo "Build completed"
             }
         }
+	stage('Run Application') {
+            steps {
+                bat 'python app.py'
+            }
+        }
 
     }
 
