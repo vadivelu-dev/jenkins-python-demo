@@ -1,11 +1,15 @@
 pipeline {
     agent any
 
+    triggers {
+    	cron('H/1 * * * *')
+    }
+
     stages {
 
         stage('Clone') {
             steps {
-                echo "Cloning repository"
+                checkout scm
             }
         }
 
